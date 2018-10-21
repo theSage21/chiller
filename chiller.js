@@ -7,6 +7,7 @@ function post(url, data, success){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.withCredentials = true;
     xmlhttp.onreadystatechange = function(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
             var dat = JSON.parse(xmlhttp.responseText);
@@ -19,6 +20,7 @@ function post(url, data, success){
 function get(url, success){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url, true);
+    xmlhttp.withCredentials = true;
     xmlhttp.onreadystatechange = function(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
             var dat = JSON.parse(xmlhttp.responseText);
